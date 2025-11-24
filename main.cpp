@@ -104,6 +104,10 @@ int main()
         {
             score-=10;
         }
+        if (score<0)
+        {
+            score=0;
+        }
     if (score>=0&&score<=30)
     {
         anim_txt("Your password is weak");
