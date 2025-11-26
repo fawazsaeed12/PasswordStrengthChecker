@@ -4,7 +4,6 @@
     #include<chrono>
     #include<thread>
     #include<cmath>
-    #include <iomanip>
     using namespace std;
         bool repe(string s)
         {
@@ -18,7 +17,7 @@
                 }
                     return false;
         }
-    void anim_txt (const std::string  &text,int delay_ms = 80 )
+    void anim_txt (const std::string  &text,int delay_ms = 100 )
         {
             for (char a : text)
             {
@@ -32,29 +31,28 @@ void convert_time(long double total_seconds)
             long double years = seconds/31557600;
             if (years>1)
             {
-                cout<<noshowpoint;
-                cout<<"Years: "<<static_cast<int>(years)<<endl;
+                cout<<"Years: "<<static_cast<long long int>(years)<<endl;
                seconds = fmod(years,31557600);
             }
             long double days = seconds/86400;
             if (days>1)
             {
-                cout<<"Days: "<<static_cast<int>(days)<<endl;
+                cout<<"Days: "<<static_cast<long long int>(days)<<endl;
                 seconds = fmod(days,86400);
             }
             long double hours = seconds/3600;
             if (hours>1)
             {
-                cout<<"Hours: "<<static_cast<int>(hours)<<endl;
+                cout<<"Hours: "<<static_cast<long long int>(hours)<<endl;
                 seconds = fmod(hours,3600);
             }
             long double minutes = seconds/60;
             if (minutes>1)
             {
-                cout<<"Minutes: "<<static_cast<int>(minutes)<<endl;
+                cout<<"Minutes: "<<static_cast<long long int>(minutes)<<endl;
                 seconds = fmod(minutes,60);
             }
-            cout<<"Seconds: "<<static_cast<int>(seconds)<<endl;
+            cout<<"Seconds: "<<static_cast<long long int>(seconds)<<endl;
         }
     int main()
     {
@@ -147,7 +145,7 @@ void convert_time(long double total_seconds)
                 score=0;
             }
             total_combo=pow(char_size,number);
-            tt_crack=total_combo/6000000;//6000000 is the guesses per second according to my laptop
+            tt_crack=total_combo/1000000000;//1000000000 is the guesses per second of an average modern gpu.
             convert_time(tt_crack);
         if (score>=0&&score<=30)
         {
