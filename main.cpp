@@ -59,7 +59,7 @@ using namespace std;
         //variables
         int score{0};
         int number{0};
-        int brute_option;
+        int brute_option{0};
         int char_size{0};
         long double total_combo{0};
         long double tt_crack{0};
@@ -68,7 +68,7 @@ using namespace std;
         bool small{false};
         bool digit{false};
         bool symbol{false};
-        long long int brute_power;
+        long long int brute_power{0};
         //variables
 
 
@@ -168,7 +168,7 @@ using namespace std;
             cout<<"Your password is strong ";
         }   //password determine part
 
-    cout<<"select if you want to brute force with the power of\n1 for Average pc\n2 for Modern Gpu\n3 for Hacking Rig\n";
+    cout<<"\nselect if you want to brute force with the power of\n1 for Average pc\n2 for Modern Gpu\n3 for Hacking Rig\n";
         cin>>brute_option;
             //brute force guess per second part
         total_combo=pow(char_size,number);
@@ -201,21 +201,25 @@ using namespace std;
 
 
             //suggestions for better pass
-        if (capital==false)
+        if (capital==false||small==false||digit==false||symbol==false)
         {
-            cout<<"SUGGESTION: please use upper case character"<<endl;
-        }
-        if (small==false)
-        {
-            cout<<"SUGGESTION: please use lowercase character"<<endl;
-        }
-        if (digit==false)
-        {
-            cout<<"SUGGESTION: please use Numbers"<<endl;
-        }
-        if (symbol==false)
-        {
-            cout<<"SUGGESTION: please use special symbols"<<endl;
+            cout<<"SUGGESTIONS:\n";
+            if (capital==false)
+            {
+                cout<<"Use upper case character"<<endl;
+            }
+            if (small==false)
+            {
+                cout<<"Use lowercase character"<<endl;
+            }
+            if (digit==false)
+            {
+                cout<<"Use numbers"<<endl;
+            }
+            if (symbol==false)
+            {
+                cout<<"Use special symbols"<<endl;
+            }
         }
         //suggestions for better pass
     }
